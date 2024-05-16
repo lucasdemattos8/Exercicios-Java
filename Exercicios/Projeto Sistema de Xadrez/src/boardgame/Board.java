@@ -41,4 +41,9 @@ public class Board {
 	public Piece peca(Position position) {
 		return pecas[position.getLinha()][position.getColuna()];
 	}
+	
+	public void colocarPeca(Piece peca, Position posicao) {
+		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+		peca.posicao = posicao;
+	}
 }
