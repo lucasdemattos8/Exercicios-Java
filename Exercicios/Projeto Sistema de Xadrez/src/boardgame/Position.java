@@ -22,11 +22,11 @@ public class Position {
 		this.linha = linha;
 	}
 
-	public int getColumn() {
+	public int getColuna() {
 		return coluna;
 	}
 
-	public void setColumn(int column) {
+	public void setColuna(int column) {
 		this.coluna = column;
 	}
 	

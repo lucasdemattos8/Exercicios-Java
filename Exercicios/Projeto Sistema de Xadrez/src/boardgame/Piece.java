@@ -18,6 +18,8 @@ public class Piece {
 		return tabuleiro;
 	}
 	
+	// Métodos
 	
+
 
 }
