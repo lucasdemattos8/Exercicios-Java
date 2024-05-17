@@ -30,11 +30,17 @@ public class Position {
 		this.coluna = column;
 	}
 	
+	public void setValues(int linha, int coluna) {
+		this.linha = linha;
+		this.coluna = coluna;
+	}
+	
 	// Métodos
 	
 	@Override
 	public String toString() {
 		return linha + ", " + coluna;
 	}
+
 
 }
