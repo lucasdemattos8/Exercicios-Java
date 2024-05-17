@@ -1,6 +1,8 @@
 package chess;
 
 import boardgame.Board;
+import boardgame.Piece;
+import boardgame.Position;
 import chess.pieces.*;
 
 public class ChessMatch {
@@ -27,6 +29,27 @@ public class ChessMatch {
 	}
 	
 	// Método
+	
+	public ChessPiece performarMovimentoDeXadrez(ChessPosition posicaoOrigem, ChessPosition posicaoDestino) {
+		Position origem = posicaoOrigem.toPosition();
+		Position destino = posicaoDestino.toPosition();
+		validarPosicaoDeOrigem(origem);
+		Piece pecaCapturada = movimentarPeca(origem, destino);
+		return (ChessPiece) pecaCapturada;
+	}
+	
+	public Piece movimentarPeca(Position origem, Position destino) {
+		Piece p = tabuleiro.removePiece(origem);
+		Piece pecaCapturada = tabuleiro.removePiece(destino);
+		tabuleiro.colocarPeca(p, destino);
+		return (ChessPiece) pecaCapturada;
+	}
+	
+	private void validarPosicaoDeOrigem(Position posicao) {
+		if(!tabuleiro.posicaoOcupada(posicao)) {
+			throw new ChessException("Não há peça na posição de Origem");
+		}
+	}
 
 	private void colocarNovaPeca(char coluna, int linha, ChessPiece peca) {
 		tabuleiro.colocarPeca(peca, new ChessPosition(coluna, linha).toPosition());
