@@ -29,6 +29,7 @@ public class Rook extends ChessPiece{
 			p.setLinha(p.getLinha() - 1);
 		}
 		if (getTabuleiro().posicaoExiste(p) && existeUmaPecaOponente(p)) {
+			System.out.println("true para " + p.getLinha() + " " + p.getColuna());
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 		

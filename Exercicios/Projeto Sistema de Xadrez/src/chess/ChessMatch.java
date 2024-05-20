@@ -30,6 +30,12 @@ public class ChessMatch {
 	
 	// Método
 	
+	public boolean[][] movimentosPossiveis(ChessPosition posicaoOrigem){
+		Position posicao = posicaoOrigem.toPosition();
+		validarPosicaoDeOrigem(posicao);
+		return tabuleiro.peca(posicao).movimentosPossiveis();
+	}
+	
 	public ChessPiece performarMovimentoDeXadrez(ChessPosition posicaoOrigem, ChessPosition posicaoDestino) {
 		Position origem = posicaoOrigem.toPosition();
 		Position destino = posicaoDestino.toPosition();
