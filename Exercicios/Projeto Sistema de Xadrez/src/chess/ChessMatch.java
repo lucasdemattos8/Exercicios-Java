@@ -7,16 +7,36 @@ import chess.pieces.*;
 
 public class ChessMatch {
 	
+	private int turno;
+	private Color playerAtual;
 	private Board tabuleiro;
 	
 	
 	// Construtor
 	public ChessMatch() {
 		tabuleiro = new Board(8, 8);
+		turno = 1;
+		playerAtual = Color.WHITE;
 		setupInicial();
 	}
 	
 	// Getter
+	
+	public int getTurno() {
+		return turno;
+	}
+	
+	public Color getPlayerAtual() {
+		return playerAtual;
+	}
+	
+	public String getStringOfPlayerAtual() {
+		if (playerAtual == Color.valueOf("WHITE")) {
+			return "BRANCAS";
+		} else {
+			return "PRETAS";
+		}
+	}
 	
 	public ChessPiece[][] getPecas(){
 		ChessPiece[][] mat = new ChessPiece[tabuleiro.getLinhas()][tabuleiro.getColunas()];
@@ -42,6 +62,7 @@ public class ChessMatch {
 		validarPosicaoDeOrigem(origem);
 		validarPosicaoDeDestino(origem, destino);
 		Piece pecaCapturada = movimentarPeca(origem, destino);
+		proximoTurno();
 		return (ChessPiece) pecaCapturada;
 	}
 	
@@ -56,6 +77,9 @@ public class ChessMatch {
 		if(!tabuleiro.posicaoOcupada(posicao)) {
 			throw new ChessException("Nao ha peça na posição de Origem");
 		}
+		if(playerAtual != ((ChessPiece)tabuleiro.peca(posicao)).getCor()) {
+			throw new ChessException("A peca escolhida não é sua");
+		}
 		if(!tabuleiro.peca(posicao).verificarSeExisteMovimentosPossiveis()) {
 			throw new ChessException("Nao ha movimentos possiveis para esta peça");
 		}
@@ -65,6 +89,11 @@ public class ChessMatch {
 		if(!tabuleiro.peca(origem).movimentoPossivel(destino)) {
 			throw new ChessException("A peca escolhida não pode se mover para a posição de destino");
 		}
+	}
+	
+	private void proximoTurno() {
+		turno++;
+		playerAtual = (playerAtual == Color.WHITE) ? Color.BLACK : Color.WHITE;
 	}
 
 	private void colocarNovaPeca(char coluna, int linha, ChessPiece peca) {

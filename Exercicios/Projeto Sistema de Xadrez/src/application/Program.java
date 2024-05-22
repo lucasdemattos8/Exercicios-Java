@@ -14,11 +14,11 @@ public class Program {
 		
 		Scanner sc = new Scanner(System.in);
 		ChessMatch partidaXadrez = new ChessMatch();
-		
+
 		while(true) {
 			try {
 				UI.clearScreen();
-				UI.printTabuleiro(partidaXadrez.getPecas());
+				UI.printPartida(partidaXadrez);
 				System.out.println();
 				System.out.print("Origem: ");
 				ChessPosition origem = UI.leituraDePosicao(sc);
