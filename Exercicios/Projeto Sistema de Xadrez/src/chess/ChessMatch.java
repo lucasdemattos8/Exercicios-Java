@@ -202,18 +202,29 @@ public class ChessMatch {
 	}
 	
 	private void setupInicial() {
-		colocarNovaPeca('c', 1, new Rook(tabuleiro, Color.WHITE));
-		colocarNovaPeca('c', 2, new Rook(tabuleiro, Color.WHITE));
-		colocarNovaPeca('d', 2, new Rook(tabuleiro, Color.WHITE));
-		colocarNovaPeca('e', 2, new Rook(tabuleiro, Color.WHITE));
-		colocarNovaPeca('e', 1, new Rook(tabuleiro, Color.WHITE));
-		colocarNovaPeca('d', 1, new King(tabuleiro, Color.WHITE));
+		colocarNovaPeca('a', 1, new Rook(tabuleiro, Color.WHITE));
+		colocarNovaPeca('e', 1, new King(tabuleiro, Color.WHITE));
+		colocarNovaPeca('h', 1, new Rook(tabuleiro, Color.WHITE));
+		colocarNovaPeca('a', 2, new Pawn(tabuleiro, Color.WHITE));
+		colocarNovaPeca('b', 2, new Pawn(tabuleiro, Color.WHITE));
+		colocarNovaPeca('c', 2, new Pawn(tabuleiro, Color.WHITE));
+		colocarNovaPeca('d', 2, new Pawn(tabuleiro, Color.WHITE));
+		colocarNovaPeca('e', 2, new Pawn(tabuleiro, Color.WHITE));
+		colocarNovaPeca('f', 2, new Pawn(tabuleiro, Color.WHITE));
+		colocarNovaPeca('g', 2, new Pawn(tabuleiro, Color.WHITE));
+		colocarNovaPeca('h', 2, new Pawn(tabuleiro, Color.WHITE));
+		
+		colocarNovaPeca('a', 8, new Rook(tabuleiro, Color.BLACK));
+		colocarNovaPeca('e', 8, new King(tabuleiro, Color.BLACK));
+		colocarNovaPeca('h', 8, new Rook(tabuleiro, Color.BLACK));
+		colocarNovaPeca('a', 7, new Pawn(tabuleiro, Color.BLACK));
+		colocarNovaPeca('b', 7, new Pawn(tabuleiro, Color.BLACK));
+		colocarNovaPeca('c', 7, new Pawn(tabuleiro, Color.BLACK));
+		colocarNovaPeca('d', 7, new Pawn(tabuleiro, Color.BLACK));
+		colocarNovaPeca('e', 7, new Pawn(tabuleiro, Color.BLACK));
+		colocarNovaPeca('f', 7, new Pawn(tabuleiro, Color.BLACK));
+		colocarNovaPeca('g', 7, new Pawn(tabuleiro, Color.BLACK));
+		colocarNovaPeca('h', 7, new Pawn(tabuleiro, Color.BLACK));
 
-		colocarNovaPeca('c', 7, new Rook(tabuleiro, Color.BLACK));
-		colocarNovaPeca('c', 8, new Rook(tabuleiro, Color.BLACK));
-		colocarNovaPeca('d', 7, new Rook(tabuleiro, Color.BLACK));
-		colocarNovaPeca('e', 7, new Rook(tabuleiro, Color.BLACK));
-		colocarNovaPeca('e', 8, new Rook(tabuleiro, Color.BLACK));
-		colocarNovaPeca('d', 8, new King(tabuleiro, Color.BLACK));
 	}
 }
