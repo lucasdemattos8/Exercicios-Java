@@ -107,6 +107,24 @@ public class ChessMatch {
 			pecasCapturadas.add(pecaCapturada);
 		}
 		
+		// # Movimento especial lado do rei (Rook)
+		if (p instanceof King && destino.getColuna() == origem.getColuna() + 2) {
+			Position origemT = new Position(origem.getLinha(), origem.getColuna() + 3);
+			Position destinoT = new Position(origem.getLinha(), origem.getColuna() + 1);
+			ChessPiece torre = (ChessPiece)tabuleiro.removePiece(origemT);
+			tabuleiro.colocarPeca(torre, destinoT);
+			torre.aumentarContador();
+		}
+		
+		// # Movimento especial lado da rainha (Rook)
+		if (p instanceof King && destino.getColuna() == origem.getColuna() - 2) {
+			Position origemT = new Position(origem.getLinha(), origem.getColuna() - 4);
+			Position destinoT = new Position(origem.getLinha(), origem.getColuna() - 1);
+			ChessPiece torre = (ChessPiece)tabuleiro.removePiece(origemT);
+			tabuleiro.colocarPeca(torre, destinoT);
+			torre.aumentarContador();
+		}
+		
 		return (ChessPiece) pecaCapturada;
 	}
 	
@@ -119,6 +137,24 @@ public class ChessMatch {
 			tabuleiro.colocarPeca(pecaCapturada, destino);
 			pecasCapturadas.remove(pecaCapturada);
 			pecasNoTabuleiro.add(pecaCapturada);
+		}
+	
+		// # Movimento especial lado do rei (Rook)
+		if (p instanceof King && destino.getColuna() == origem.getColuna() + 2) {
+			Position origemT = new Position(origem.getLinha(), origem.getColuna() + 3);
+			Position destinoT = new Position(origem.getLinha(), origem.getColuna() + 1);
+			ChessPiece torre = (ChessPiece)tabuleiro.removePiece(destinoT);
+			tabuleiro.colocarPeca(torre, origemT);
+			torre.reduzirContador();
+		}
+		
+		// # Movimento especial lado da rainha (Rook)
+		if (p instanceof King && destino.getColuna() == origem.getColuna() - 2) {
+			Position origemT = new Position(origem.getLinha(), origem.getColuna() - 4);
+			Position destinoT = new Position(origem.getLinha(), origem.getColuna() - 1);
+			ChessPiece torre = (ChessPiece)tabuleiro.removePiece(destinoT);
+			tabuleiro.colocarPeca(torre, origemT);
+			torre.reduzirContador();
 		}
 	}
 	
@@ -208,7 +244,7 @@ public class ChessMatch {
 		colocarNovaPeca('c', 1, new Bishop(tabuleiro, Color.WHITE));
 		colocarNovaPeca('d', 1, new Queen(tabuleiro, Color.WHITE));
 		colocarNovaPeca('f', 1, new Bishop(tabuleiro, Color.WHITE));
-		colocarNovaPeca('e', 1, new King(tabuleiro, Color.WHITE));
+		colocarNovaPeca('e', 1, new King(tabuleiro, Color.WHITE, this));
 		colocarNovaPeca('h', 1, new Rook(tabuleiro, Color.WHITE));
 		colocarNovaPeca('a', 2, new Pawn(tabuleiro, Color.WHITE));
 		colocarNovaPeca('b', 2, new Pawn(tabuleiro, Color.WHITE));
@@ -225,7 +261,7 @@ public class ChessMatch {
 		colocarNovaPeca('c', 8, new Bishop(tabuleiro, Color.BLACK));
 		colocarNovaPeca('d', 8, new Queen(tabuleiro, Color.BLACK));
 		colocarNovaPeca('f', 8, new Bishop(tabuleiro, Color.BLACK));
-		colocarNovaPeca('e', 8, new King(tabuleiro, Color.BLACK));
+		colocarNovaPeca('e', 8, new King(tabuleiro, Color.BLACK, this));
 		colocarNovaPeca('h', 8, new Rook(tabuleiro, Color.BLACK));
 		colocarNovaPeca('a', 7, new Pawn(tabuleiro, Color.BLACK));
 		colocarNovaPeca('b', 7, new Pawn(tabuleiro, Color.BLACK));
