@@ -48,7 +48,7 @@ public class UI {
 			return new ChessPosition(coluna, linha);
 		}
 		catch (RuntimeException e){
-			throw new InputMismatchException("Erro lendo ChessPosition: Posições válidas de xadrez são de a1 até h8");
+			throw new InputMismatchException("Erro lendo ChessPosition: Posicoes validas de xadrez sao de a1 até h8");
 		}
 	}
 	
@@ -60,7 +60,7 @@ public class UI {
 		System.out.println("Turno : " + partidaDeXadrez.getTurno());
 		
 		if (!partidaDeXadrez.getCheckMate()) {
-			System.out.println("Aguardando peças : " + partidaDeXadrez.getStringOfPlayerAtual());
+			System.out.println("Aguardando pecas : " + partidaDeXadrez.getStringOfPlayerAtual());
 			if (partidaDeXadrez.getCheck()) {
 				System.out.println("CHECK!");
 			}
@@ -117,7 +117,7 @@ public class UI {
 	private static void printPecasCapturadas(List<ChessPiece> capturadas) {
 		List<ChessPiece> white = capturadas.stream().filter(x -> x.getCor() == Color.WHITE).collect(Collectors.toList());
 		List<ChessPiece> black = capturadas.stream().filter(x -> x.getCor() == Color.BLACK).collect(Collectors.toList());
-		System.out.println("Peças capturadas:");
+		System.out.println("Pecas capturadas:");
 		System.out.print("Brancas: ");
 		System.out.print(ANSI_WHITE);
 		System.out.println(Arrays.toString(white.toArray()));

@@ -38,6 +38,16 @@ public class Program {
 				if (pecaCapturada != null) {
 					capturadas.add(pecaCapturada);
 				}
+				
+				if(partidaXadrez.getPecaPromovida() != null) {
+					System.out.print("Insira peca para promocao (B/N/R/Q): ");
+					String escolha = sc.nextLine().toUpperCase();
+					while (!escolha.equals("B") && !escolha.equals("N") && !escolha.equals("Q") && !escolha.equals("R")) {
+						System.out.print("Valor inválido! Insira peca para promocao (B/N/R/Q): ");
+						escolha = sc.nextLine().toUpperCase();
+					}
+					partidaXadrez.alterarPecaPromovida(escolha);
+				}
 			}
 			catch (ChessException e) {
 				System.out.println(e.getMessage());
