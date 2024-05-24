@@ -206,6 +206,7 @@ public class ChessMatch {
 		colocarNovaPeca('b', 1, new Knight(tabuleiro, Color.WHITE));
 		colocarNovaPeca('g', 1, new Knight(tabuleiro, Color.WHITE));
 		colocarNovaPeca('c', 1, new Bishop(tabuleiro, Color.WHITE));
+		colocarNovaPeca('d', 1, new Queen(tabuleiro, Color.WHITE));
 		colocarNovaPeca('f', 1, new Bishop(tabuleiro, Color.WHITE));
 		colocarNovaPeca('e', 1, new King(tabuleiro, Color.WHITE));
 		colocarNovaPeca('h', 1, new Rook(tabuleiro, Color.WHITE));
@@ -222,6 +223,7 @@ public class ChessMatch {
 		colocarNovaPeca('b', 8, new Knight(tabuleiro, Color.BLACK));
 		colocarNovaPeca('g', 8, new Knight(tabuleiro, Color.BLACK));
 		colocarNovaPeca('c', 8, new Bishop(tabuleiro, Color.BLACK));
+		colocarNovaPeca('d', 8, new Queen(tabuleiro, Color.BLACK));
 		colocarNovaPeca('f', 8, new Bishop(tabuleiro, Color.BLACK));
 		colocarNovaPeca('e', 8, new King(tabuleiro, Color.BLACK));
 		colocarNovaPeca('h', 8, new Rook(tabuleiro, Color.BLACK));
