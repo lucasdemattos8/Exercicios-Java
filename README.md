@@ -33,7 +33,7 @@ Neste exercício, explorei o conceito de tratamento de exceções em Java. Apren
 ### Exercicio 2: Projeto de Xadrez
 
 **Descrição:**
-Este é um projeto completo de um jogo de xadrez em Java. Inclui a lógica do jogo, verificação de movimentos válidos, captura de peças e detecção de xeque e xeque-mate.
+Este é um projeto completo de um jogo de xadrez em Java. Inclui a lógica do jogo, verificação de movimentos válidos, jogadas especiais como: Roque, En Passant e promoção do Peão, captura de peças e detecção de xeque e xeque-mate.
 
 **Localização:**
 `/Exercicios/Projeto Sistema de Xadrez`
