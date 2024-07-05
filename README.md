@@ -13,7 +13,6 @@ Bem-vindo ao meu repositório de exercícios de Java! Aqui você encontrará uma
   - [Exercício 3: Trabalhando com Arquivos](#exercício-3-trabalhando-com-arquivos)
   - [Exercício 4: Trabalhando com Date](#exercício-4-trabalhando-com-date)
   - [Exercício 5: Tratamento de Exceções](#exercício-5-tratamento-de-exceções)
-- [Como Contribuir](#como-contribuir)
 - [Licença](#licença)
 
 ## Introdução
@@ -71,14 +70,6 @@ Tratamento de exceções em Java.
 
 **Localização:**
 `/Exercicios/Tratamento de Exceções/`
-
-### Exercício 6: Interfaces
-
-**Descrição:**
-Conceitos de interface em Java.
-
-**Localização:**
-`/Exercicios/Interfaces/`
 
 ## Licença
 
