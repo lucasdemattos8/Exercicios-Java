@@ -72,15 +72,13 @@ Tratamento de exceções em Java.
 **Localização:**
 `/Exercicios/Tratamento de Exceções/`
 
-## Como Contribuir
+### Exercício 6: Interfaces
 
-Contribuições são bem-vindas! Se você tiver sugestões de melhorias ou novos exercícios para adicionar, siga os passos abaixo:
+**Descrição:**
+Conceitos de interface em Java.
 
-1. Faça um fork deste repositório.
-2. Crie um branch para sua contribuição (`git checkout -b feature/nova-contribuicao`).
-3. Commit suas alterações (`git commit -m 'Adicionar nova contribuição'`).
-4. Faça o push para o branch (`git push origin feature/nova-contribuicao`).
-5. Abra um Pull Request.
+**Localização:**
+`/Exercicios/Interfaces/`
 
 ## Licença
 
