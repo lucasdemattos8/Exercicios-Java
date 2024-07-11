@@ -28,12 +28,15 @@ public class Program {
 				switch (course) {
 					case 'A':{
 						courseA.add(student);
+						break;
 					}
 					case 'B':{
 						courseB.add(student);
+						break;
 					}
 					case 'C':{
 						courseC.add(student);
+						break;
 					}	
 				}
 			}	
