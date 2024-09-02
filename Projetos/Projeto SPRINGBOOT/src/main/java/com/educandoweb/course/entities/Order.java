@@ -27,6 +27,8 @@ public class Order implements Serializable {
 			pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant moment;
 	
+	private Integer orderStatus;
+	
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
@@ -39,6 +41,7 @@ public class Order implements Serializable {
 	private Order(OrderBuilder orderBuilder) {
 		this.id = orderBuilder.id;
 		this.moment = orderBuilder.moment;
+		this.orderStatus = orderBuilder.orderStatus;
 		this.client = orderBuilder.client;
 	}
 	
@@ -58,6 +61,14 @@ public class Order implements Serializable {
 
 	public void setMoment(Instant moment) {
 		this.moment = moment;
+	}
+	
+	public OrderStatus getOrderStatus() {
+		return OrderStatus.valueOf(orderStatus);
+	}
+	
+	public void setOrderStatus(OrderStatus orderStatus) {
+		this.orderStatus = orderStatus.getCode();
 	}
 
 	public User getClient() {
@@ -93,6 +104,7 @@ public class Order implements Serializable {
 		private Long id;
 		private Instant moment;
 		private User client;
+		private Integer orderStatus;
 		
 		public OrderBuilder setId(Long id){
 			this.id = id;
@@ -106,6 +118,13 @@ public class Order implements Serializable {
 		
 		public OrderBuilder setClient(User client) {
 			this.client = client;
+			return this;
+		}
+		
+		public OrderBuilder setOrderStatus(OrderStatus orderStatus) {
+			if(orderStatus != null) {
+				this.orderStatus = orderStatus.getCode();
+			}
 			return this;
 		}
 		

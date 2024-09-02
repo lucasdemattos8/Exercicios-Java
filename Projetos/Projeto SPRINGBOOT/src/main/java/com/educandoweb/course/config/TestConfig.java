@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.educandoweb.course.entities.Order;
+import com.educandoweb.course.entities.OrderStatus;
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.repositories.OrderRepository;
 import com.educandoweb.course.repositories.UserRepository;
@@ -45,18 +46,21 @@ public class TestConfig implements CommandLineRunner {
 		Order o1 = new Order.OrderBuilder()
 				.setId(null)
 				.setMoment(Instant.parse("2019-06-20T19:53:07Z"))
+				.setOrderStatus(OrderStatus.PAID)
 				.setClient(u1)
 				.build();
 		
 		Order o2 = new Order.OrderBuilder()
 				.setId(null)
 				.setMoment(Instant.parse("2019-07-21T03:42:10Z"))
+				.setOrderStatus(OrderStatus.WAITING_PAYMENT)
 				.setClient(u2)
 				.build();
 		
 		Order o3 = new Order.OrderBuilder()
 				.setId(null)
 				.setMoment(Instant.parse("2019-07-22T15:21:22Z"))
+				.setOrderStatus(OrderStatus.WAITING_PAYMENT)
 				.setClient(u1)
 				.build();
 		
