@@ -11,9 +11,11 @@ import org.springframework.context.annotation.Profile;
 import com.educandoweb.course.entities.Category;
 import com.educandoweb.course.entities.Order;
 import com.educandoweb.course.entities.OrderStatus;
+import com.educandoweb.course.entities.Product;
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.repositories.CategoryRepository;
 import com.educandoweb.course.repositories.OrderRepository;
+import com.educandoweb.course.repositories.ProductRepository;
 import com.educandoweb.course.repositories.UserRepository;
 
 @Configuration
@@ -28,6 +30,9 @@ public class TestConfig implements CommandLineRunner {
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -46,7 +51,50 @@ public class TestConfig implements CommandLineRunner {
 				.setId(null)
 				.setName("Computers")
 				.build();
-				
+		
+		Product p1 = new Product.ProductBuilder()
+				.setId(null)
+				.setName("The Lord of the Rings")
+				.setDescription("Lorem ipsum dolor sit amet, consectetur.")
+				.setPrice(90.5)
+				.setImgUrl("")
+				.build();
+		
+		Product p2 = new Product.ProductBuilder()
+				.setId(null)
+				.setName("Smart TV")
+				.setDescription("Nulla eu imperdiet purus. Maecenas ante.")
+				.setPrice(2190.0)
+				.setImgUrl("")
+				.build();
+		
+		Product p3 = new Product.ProductBuilder()
+				.setId(null)
+				.setName("Macbook Pro")
+				.setDescription("Nam eleifend maximus tortor, at mollis.")
+				.setPrice(1250.0)
+				.setImgUrl("")
+				.build();
+		
+		Product p4 = new Product.ProductBuilder()
+				.setId(null)
+				.setName("PC Gamer")
+				.setDescription("Donec aliquet odio ac rhoncus cursus.")
+				.setPrice(1200.0)
+				.setImgUrl("")
+				.build();
+		
+		Product p5 = new Product.ProductBuilder()
+				.setId(null)
+				.setName("Rails for Dummies")
+				.setDescription("Cras fringilla convallis sem vel faucibus.")
+				.setPrice(100.99)
+				.setImgUrl("")
+				.build();
+		
+		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
+		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));		
+		
 		User u1 = new User.UserBuilder()
 				.setId(null)
 				.setName("Maria Brown")
@@ -85,7 +133,6 @@ public class TestConfig implements CommandLineRunner {
 				.build();
 		
 		
-		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
 		userRepository.saveAll(Arrays.asList(u1, u2));
 		orderRepository.saveAll(Arrays.asList(o1, o2, o3));
 		
