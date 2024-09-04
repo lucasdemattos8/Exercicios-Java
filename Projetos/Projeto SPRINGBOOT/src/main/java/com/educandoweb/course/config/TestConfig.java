@@ -161,16 +161,16 @@ public class TestConfig implements CommandLineRunner {
 		
 		OrderItem oi2 = new OrderItem.OrderItemBuilder()
 				.setOrder(o1)
-				.setProduct(p5)
+				.setProduct(p3)
 				.setQuantity(1)
-				.setPrice(p4.getPrice())
+				.setPrice(p3.getPrice())
 				.build();
 		
 		OrderItem oi3 = new OrderItem.OrderItemBuilder()
 				.setOrder(o2)
-				.setProduct(p5)
+				.setProduct(p3)
 				.setQuantity(2)
-				.setPrice(p1.getPrice())
+				.setPrice(p3.getPrice())
 				.build();
 		
 		OrderItem oi4 = new OrderItem.OrderItemBuilder()
