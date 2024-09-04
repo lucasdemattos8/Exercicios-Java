@@ -12,6 +12,7 @@ import com.educandoweb.course.entities.Category;
 import com.educandoweb.course.entities.Order;
 import com.educandoweb.course.entities.OrderItem;
 import com.educandoweb.course.entities.OrderStatus;
+import com.educandoweb.course.entities.Payment;
 import com.educandoweb.course.entities.Product;
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.repositories.CategoryRepository;
@@ -180,6 +181,16 @@ public class TestConfig implements CommandLineRunner {
 				.build();
 		
 		orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
+		
+		Payment pay1 = new Payment.PaymentBuilder()
+				.setId(null)
+				.setMoment(Instant.parse("2019-06-20T21:53:07Z"))
+				.setOrder(o1)
+				.build();
+		
+		o1.setPayment(pay1);
+		
+		orderRepository.save(o1);
 		
 	}
 }
